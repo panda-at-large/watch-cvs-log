@@ -1,0 +1,4 @@
+run cvs history
+parse the history
+send email notice
+
