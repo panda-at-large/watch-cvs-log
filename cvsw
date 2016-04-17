@@ -12,7 +12,7 @@ echo "reporting CVS changes on : $d "
 #parse it
 /bin/perl -ne 'if(/^(A|M|U)\s(\d{4}-\d{2}-\d{2}\s\d{2}:\d{2})\s\+\d{4}\s(\w+)\s(.*?)\s(.*?)\s(.*)\==/) {print "$1 $2 $3 $4 $5 $6\n"}' /tmp/cvs.$d > /tmp/cvs.out
 
-#mail it
+#mail it if there's changes
 if [[ -s /tmp/cvs.out ]];then
  cat /tmp/cvs.out |mailx -s "CVS CHANGE REPORT: $d" peter.hu@cgi.com 
 else
